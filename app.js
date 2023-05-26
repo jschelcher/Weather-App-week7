@@ -31,16 +31,7 @@ let month = months[now.getMonth()];
 
 h2.innerHTML = `${day} <br> ${month} ${date}, ${year}`;
 
-function search(event) {
-event.preventDefault();
-let searchInput = document.querySelector("#search-text-input");
 
-searchCity(searchInput.value);
-}
-
-let form = document.querySelector("#search-form");
-
-form.addEventListener("submit", search);
 
 function searchCity(city){
 let key = "d1a86552de255334f6117b348c4519bd";
@@ -60,8 +51,25 @@ iconElement.setAttribute("src",'http://openweathermap.org/img/wn/${response.data
 
 function displayCelsiusTempreature(event) {
 event.preventDefault();
-alert("clicked");
+let celsiusTemperature = (temp-32) * 5/9
+let temperatureElement = document.querySelector("#fahrenheit")
+temperatureElement.innerHTML = math.round(celsiusTemperature);
 }
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTempreature);
+
+let farhrenheitTemperature = null;
+
+
+function search(event) {
+    event.preventDefault();
+    let searchInput = document.querySelector("#search-text-input");
+    
+    searchCity(searchInput.value);
+    }
+    
+    let form = document.querySelector("#search-form");
+    
+    form.addEventListener("submit", search);
+
