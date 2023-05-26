@@ -46,13 +46,14 @@ function searchCity(city){
 let key = "d1a86552de255334f6117b348c4519bd";
 let url =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=imperial`;
 
-axios.get(url).then(currentWeather);
+axios.get(url).then(currentWeather);rb
+
 }
 
 function currentWeather(response) {
 let temp = response.data.main.temp;
 let h1 = document.querySelector("span")
 h1.innerHTML = `Currently ${temp}˚F`;
-let iconElement = document.querySelector ("")
+let iconElement = document.querySelector ("#icon")
 iconElement.setAttribute("src",'http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png')
 }
