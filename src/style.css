@@ -1,0 +1,33 @@
+body {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    border: black;
+    border: 2px solid black;
+    border-radius: 4px;
+    margin: 2px 200px 5px 200px;
+    padding: 20px;
+  }
+  .main {
+    text-align: right;
+    font-size: medium;
+  }
+  h3 {
+    text-align: right;
+    font-size: medium;
+  }
+  
+  .current {
+    font-size: x-large;
+  }
+  h2 {
+    position: relative;
+    top: -60px;
+    font-size: medium;
+  }
+  .row {
+    text-align: center;
+  }
+  #search-form {
+    color: blue;
+    border-radius: 4px;
+    text-align: center;
+}
