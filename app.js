@@ -57,3 +57,11 @@ h1.innerHTML = `${temp}˚`;
 let iconElement = document.querySelector ("#icon")
 iconElement.setAttribute("src",'http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png')
 }
+
+function displayCelsiusTempreature(event) {
+event.preventDefault();
+alert("clicked");
+}
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", displayCelsiusTempreature);
