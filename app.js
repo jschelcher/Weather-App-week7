@@ -32,7 +32,6 @@ h2.innerHTML = `${day} <br> ${month} ${date}, ${year}`;
 
 function displayForecast() {
     let forecastElement = document.querySelector("#forecast");
-    <div class="weather-forecast-date"> Tuesday </div>
 
     let forecastHTML = `<div class="row">`;
     let days= ["Thu", "Fri", "Sat", "Sun"];
