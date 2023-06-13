@@ -57,18 +57,18 @@ function displayForecast() {
 
 
 function currentWeather(response) {
-let farhrenheitTemperature = response.data.main.temp;
+farhrenheitTemperature = response.data.main.temp;
 let h1 = document.querySelector("#temp");
 h1.innerHTML = `${farhrenheitTemperature}˚`;
 let iconElement = document.querySelector("#icon");
-iconElement.setAttribute("src",'http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png');
+iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function displayCelsiusTempreature(event) {
 event.preventDefault();
-let celsiusTemperature = ((farhrenheitTemperature-32)* 5)/9
-let temperatureElement = document.querySelector("#temp")
-temperatureElement.innerHTML = math.round(celsiusTemperature);
+let celsiusTemperature = ((farhrenheitTemperature - 32) * 5) / 9;
+let temperatureElement = document.querySelector("#temp");
+temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let celsiusLink = document.querySelector("#celsius");
