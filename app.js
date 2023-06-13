@@ -59,15 +59,15 @@ function displayForecast() {
 function currentWeather(response) {
 let temp = response.data.main.temp;
 let h1 = document.querySelector("#temp")
-h1.innerHTML = `${temp}˚`;
+h1.innerHTML = `${farhrenheitTemperature}˚`;
 let iconElement = document.querySelector ("#icon")
 iconElement.setAttribute("src",'http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png')
 }
 
 function displayCelsiusTempreature(event) {
 event.preventDefault();
-let celsiusTemperature = (temp-32) * 5/9
-let temperatureElement = document.querySelector("#fahrenheit")
+let celsiusTemperature = ((farhrenheitTemperature-32)* 5)/9
+let temperatureElement = document.querySelector("#temp")
 temperatureElement.innerHTML = math.round(celsiusTemperature);
 }
 
@@ -96,4 +96,4 @@ function search(event) {
     form.addEventListener("submit", search)
 
 
-    displayforecast();
+displayforecast();
