@@ -50,7 +50,7 @@ function displayForecast() {
         </div>
         `;
        })
-       forecastHTML = forcastHTML + `</div>`;
+       forecastHTML = forecastHTML + `</div>`;
     
     forecastElement.innerHTML = forecastHTML;}
 
@@ -96,4 +96,4 @@ function search(event) {
     form.addEventListener("submit", search)
 
 
-displayforecast();
+displayForecast();
