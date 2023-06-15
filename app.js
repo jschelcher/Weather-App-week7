@@ -71,8 +71,8 @@ let h1 = document.querySelector("#temp");
 h1.innerHTML = `${farhrenheitTemperature}˚`;
 let iconElement = document.querySelector("#icon");
 iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-getForecast(response.data.coord);
-}
+getForecast(response.data.coord);}
+
 
 function displayCelsiusTempreature(event) {
 event.preventDefault();
@@ -105,3 +105,4 @@ function search(event) {
     let form = document.querySelector("#search-form");
     
     form.addEventListener("submit", search)
+displayForecast();
