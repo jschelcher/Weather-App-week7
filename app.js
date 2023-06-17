@@ -33,15 +33,15 @@ h2.innerHTML = `${day} <br> ${month} ${date}, ${year}`;
 
 function formatDay(timestamp) {
     let date = new Date(timestamp * 1000);
-    let day = data.getDay();
+    let day = date.getDay();
     let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
     return days[day]; 
 }
 
-
 function displayForecast(response) {
     let forecast = response.data.daily;
+    
     let forecastElement = document.querySelector("#forecast");
     
     let forecastHTML = `<div class="row">`;
@@ -54,7 +54,9 @@ function displayForecast(response) {
         `
         <div class="col-2">
         <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-            <img src="http:openweathermap.org/img/wn/${forecastDay.weather[0].icon}2x.png"
+            <img src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png"
           alt=""
           width="42" />
         <div class="weather-forecast-temepratures">
@@ -81,7 +83,7 @@ axios.get(apiUrl).then(displayForecast);
 function currentWeather(response) {
 farhrenheitTemperature = response.data.main.temp;
 let h1 = document.querySelector("#temp");
-h1.innerHTML = `${farhrenheitTemperature}˚`;
+h1.innerHTML = `${Math.round(farhrenheitTemperature)}˚`;
 let iconElement = document.querySelector("#icon");
 iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 getForecast(response.data.coord);}
