@@ -7,7 +7,7 @@ body {
     padding: 20px;
   }
   h1 {
-    line-height: 50px;
+    line-height: 25px;
     text-align: right;
     font-size: medium;
   }
@@ -48,4 +48,4 @@ color: #000;
 opacity: 0.5;;}
 
 .weather-forecast-temepratures {font-size:13px;}
-.weather-forecast-temprature-min {opacity: 0.;;}
+.weather-forecast-temprature-min {opacity: 05;;}
