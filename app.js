@@ -60,8 +60,12 @@ function displayForecast(response) {
           alt=""
           width="42" />
         <div class="weather-forecast-temepratures">
-        <span class="weather-forecast-temperature-max">${Math.round(forecastDay.temp.max)}∙</span>
-        <span class="weather-forecast-temperature-min">${Math.round(forecastDay.temp.min)}∙
+        <span class="weather-forecast-temperature-max"> ${Math.round(
+            forecastDay.temp.max
+          )}° </span>
+          <span class="weather-forecast-temperature-min"> ${Math.round(
+            forecastDay.temp.min
+          )}° </span>
         </div> 
         </div>
         `;}
@@ -75,7 +79,7 @@ function displayForecast(response) {
 function getForecast(coordinates) {
     console.log(coordinates);   
     let key = "d1a86552de255334f6117b348c4519bd";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${key}&unites=imperial`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${key}&units=imperial`;
 axios.get(apiUrl).then(displayForecast);
 }
 
@@ -86,7 +90,15 @@ let h1 = document.querySelector("#temp");
 h1.innerHTML = `${Math.round(farhrenheitTemperature)}˚`;
 let iconElement = document.querySelector("#icon");
 iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-getForecast(response.data.coord);}
+getForecast(response.data.coord);
+let humidityElement = document.querySelector("#humidity");
+let windElement = document.querySelector("#wind");
+let descriptionElement = document.querySelector("#description");
+
+humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
+  descriptionElement.innerHTML = response.data.weather[0].description;
+}
 
 
 let farhrenheitTemperature = null;
